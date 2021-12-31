@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 services:
   keycloak:
     container_name: keycloak-server
@@ -8,3 +8,6 @@ services:
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
+      - KEYCLOAK_IMPORT=/tmp/data.json
+    volumes:
+      - ./data/test-realm.json:/tmp/data.json
