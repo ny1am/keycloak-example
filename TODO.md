@@ -2,7 +2,6 @@
 
 - [ ] create client
 - [ ] create secured resource (node.js)
-- [ ] docker compose: build image from git
 
 ## some info
 
