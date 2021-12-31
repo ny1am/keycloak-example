@@ -1,10 +1,36 @@
-# keycloak-example
+# Usage
 
-## run docker container
+## keycloak server
 
 ```
 docker-compose up
 ```
+
+http://localhost:8080/auth/admin
+credentials: admin / admin
+
+## resource server
+
+```
+cd ./server
+npm install
+npm run start
+```
+
+http://localhost:5001
+
+## frontend client
+
+```
+cd ./client
+yarn
+yarn start
+```
+
+http://localhost:3000
+test-user / 1234
+
+# Tools
 
 ## export keycloak realm
 
@@ -15,5 +41,13 @@ docker exec -it keycloak-server /opt/jboss/keycloak/bin/standalone.sh \
 -Dkeycloak.migration.realmName=test-realm \
 -Dkeycloak.migration.file=/tmp/data.json
 
-docker cp keycloak-server:/tmp/data.json ~/Desktop/data.json
+docker cp keycloak-server:/tmp/data.json ./data/test-realm.json
 ```
+
+# TODO
+
+- [ ] clean up client code
+- [ ] clean up server code
+- [ ] nextjs client
+- [ ] better README
+- [ ] clean up keycloak config
