@@ -1,18 +1,13 @@
 var express = require("express");
 var session = require("express-session");
-var bodyParser = require("body-parser");
-var Keycloak = require("keycloak-connect");
 var cors = require("cors");
+var Keycloak = require("keycloak-connect");
 
 var app = express();
-app.use(bodyParser.json());
-
-// Enable CORS support
 app.use(cors());
 
 // Create a session-store to be used by both the express-session
 // middleware and the keycloak middleware.
-
 var memoryStore = new session.MemoryStore();
 
 app.use(
@@ -25,17 +20,13 @@ app.use(
 );
 
 var keycloak = new Keycloak(
+  { store: memoryStore },
   {
-    store: memoryStore,
-  },
-  {
-    clientId: "resource",
     bearerOnly: true,
+    clientId: "resource",
     serverUrl: "http://localhost:8080/auth",
     realm: "test-realm",
-    credentials: {
-      secret: "LeuObmTywhkCAjvrOlwlAKabAUTp3PeP",
-    },
+    credentials: { secret: "LeuObmTywhkCAjvrOlwlAKabAUTp3PeP" },
   }
 );
 

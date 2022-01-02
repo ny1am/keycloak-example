@@ -1,0 +1,22 @@
+{
+  "name": "keycloak-example-resource-server",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=16",
+    "yarn": ">=1.22"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.13.3",
+    "express-session": "^1.14.2",
+    "keycloak-connect": "16.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "license": "MIT"
+}

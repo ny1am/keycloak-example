@@ -3,6 +3,7 @@
 ## keycloak server
 
 ```
+cd ./keycloak-server
 docker-compose up
 ```
 
@@ -12,9 +13,9 @@ credentials: admin / admin
 ## resource server
 
 ```
-cd ./server
-npm install
-npm run start
+cd ./resource-server
+yarn
+yarn start
 ```
 
 http://localhost:5001
@@ -41,13 +42,14 @@ docker exec -it keycloak-server /opt/jboss/keycloak/bin/standalone.sh \
 -Dkeycloak.migration.realmName=test-realm \
 -Dkeycloak.migration.file=/tmp/data.json
 
+cd ./keycloak-server
 docker cp keycloak-server:/tmp/data.json ./data/test-realm.json
 ```
 
 # TODO
 
 - [ ] clean up client code
-- [ ] clean up server code
+- [x] clean up server code
 - [ ] nextjs client
 - [ ] better README
 - [ ] clean up keycloak config
