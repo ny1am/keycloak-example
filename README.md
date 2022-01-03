@@ -20,10 +20,10 @@ yarn start
 
 http://localhost:5001
 
-## frontend client
+## frontend reactjs client
 
 ```
-cd ./client
+cd ./react-client
 yarn
 yarn start
 ```
@@ -48,8 +48,8 @@ docker cp keycloak-server:/tmp/data.json ./data/test-realm.json
 
 # TODO
 
-- [ ] clean up client code
+- [x] clean up client code
 - [x] clean up server code
-- [ ] nextjs client
 - [ ] better README
+- [ ] nextjs client
 - [ ] clean up keycloak config
