@@ -2,9 +2,7 @@ version: '3.9'
 services:
   keycloak:
     container_name: keycloak-server
-    build: 
-      context: github.com/keycloak/keycloak-containers.git#16.1.0:server
-    image: jboss/keycloak:16.1.0
+    image: quay.io/keycloak/keycloak:19.0.1-legacy
     ports:
       - "8080:8080"
     environment:
