@@ -1,9 +1,12 @@
 import { useKeycloak } from "@react-keycloak/web";
+import { useState } from "react";
 
-import apiClient from "./apiClient";
+import apiClient from "@/service/apiClient";
+import JsonViewer from "@/components/JsonViewer";
 
 function App() {
   const { initialized, keycloak } = useKeycloak();
+  const [resource, setResource] = useState<unknown>();
 
   if (!initialized) {
     return <div>loading...</div>;
@@ -20,14 +23,19 @@ function App() {
     );
   }
 
+  const callApiHandler = () => {
+    apiClient.get<unknown, unknown>("/").then(setResource);
+  };
+
   return (
     <div>
       <button type="button" onClick={() => keycloak.logout()}>
         logout
       </button>
-      <button type="button" onClick={() => apiClient.get("/")}>
-        call ip
+      <button type="button" onClick={callApiHandler}>
+        get resource
       </button>
+      {resource && <JsonViewer json={resource} />}
     </div>
   );
 }

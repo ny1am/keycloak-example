@@ -34,8 +34,9 @@ app.use(keycloak.middleware());
 
 app.get("/", keycloak.protect(), function (req, res) {
   res.json({
-    username: req.kauth.grant.access_token.content.preferred_username,
-    id: req.kauth.grant.access_token.content.sub,
+    resource_date: new Date(),
+    resource_protected_data: "only authorized can see this",
+    keycloak_token_content: req.kauth.grant.access_token.content,
   });
 });
 
