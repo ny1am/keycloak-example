@@ -1,6 +1,6 @@
-import Keycloak, { KeycloakInstance } from "keycloak-js";
+import Keycloak from "keycloak-js";
 
-const keycloakInstance: KeycloakInstance = Keycloak({
+const keycloakInstance = new Keycloak({
   url: "http://localhost:8080/auth",
   realm: "test-realm",
   clientId: "web",
