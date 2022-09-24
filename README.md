@@ -2,7 +2,8 @@
 
 A simple example of accessing protected with [Keycloak](https://www.keycloak.org/) resource in a context of single page react application.
 
-⚠️ **Disclaimer** : This software is meant for demonstration purposes only. Please refer to official documentation to use Keycloak in production environment.
+> **Note**
+> This software is meant for demonstration purposes only. Please refer to official documentation to use Keycloak in production environment.
 
 ## Getting Started
 
